@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walelign Getinet | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #38bdf8;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-light: #f1f5f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('IMG_20250819_172408.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 400;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            padding-top: 80px;
+        }
+
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero-content span { color: var(--primary-color); }
+        .hero-content p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; opacity: 0.9; }
+
+        .hero-image { flex: 1; display: flex; justify-content: center; }
+        .hero-image img {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-group { display: flex; gap: 15px; }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn-main { background: var(--primary-color); color: #fff; }
+        .btn-alt { background: var(--secondary-color); color: #fff; }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        /* Sections Styling */
+        section { padding: 100px 8%; }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Cards and Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        .card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+
+        /* Timeline for Experience */
+        .experience-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .contact-item { margin: 15px 0; font-size: 1.2rem; }
+        .contact-item i { color: var(--primary-color); margin-right: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #020617;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero { flex-direction: column-reverse; text-align: center; height: auto; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-image img { width: 250px; height: 320px; margin-bottom: 40px; }
+            .nav-links { display: none; } /* ለቀላልነት በሞባይል ጠፍቷል */
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">WG PORTFOLIO</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 id="typewriter">Hello, I'm <span>Walelign Getinet</span></h1>
+        <p>I am a detail-oriented Data Entry & Database Specialist. With 9.3 years of experience in the Ethiopian National Defense Forces, I bring military-grade discipline to the world of Tech.</p>
+        <div class="btn-group">
+            <a href="Walelign_Getinet_Professional_CV_Updated.pdf" class="btn btn-main"><i class="fas fa-download"></i> Download CV</a>
+            <a href="Cover Letter2.docx" class="btn btn-alt">Cover Letter</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="DSC_5719.jpg" alt="Walelign Graduation Photo">
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card" style="max-width: 900px; margin: 0 auto;">
+        <p>A disciplined and dedicated professional with over 9 years of military service, specializing in communication systems and special forces. Currently, I am applying my focus and analytical skills to Web Development and Database Administration to deliver high-quality digital results. I am a fast learner and committed to excellence.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-database"></i>
+            <h3>Database Management</h3>
+            <p>Expert in SQL (SELECT, INSERT, UPDATE, DELETE) and MySQL Maintenance.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Developing responsive layouts using HTML5, CSS3, and JavaScript.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security Expert</h3>
+            <p>9+ years in Special Forces, Commando training, and Crisis Response.</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="experience-box">
+        <h3>Freelance Data Entry & Database Specialist</h3>
+        <p><em>Remote | Present</em></p>
+        <p>Managed structured databases, executed SQL queries for reporting, and ensured 100% data accuracy and confidentiality.</p>
+    </div>
+    <div class="experience-box">
+        <h3>Ethiopian National Defense Forces (ENDF)</h3>
+        <p><em>9.3 Years of Service</em></p>
+        <p>Served as a Commando and Special Forces member. Specialized in military communication systems and high-pressure tactical operations.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+        <div class="contact-item"><i class="fas fa-envelope"></i> mulusewugetenet99@gmail.com</div>
+        <div class="contact-item"><i class="fas fa-phone"></i> +251 921 790 278</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</div>
+        <br>
+        <a href="mailto:mulusewugetenet99@gmail.com" class="btn btn-main">Send Me a Message</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Walelign Getinet | Web Developer & Database Specialist</p>
+    <p>Built with Passion and Discipline.</p>
+</footer>
+
+<script>
+    // Simple Typewriter Effect for Header
+    const text = "Hello, I'm Walelign Getinet";
+    let i = 0;
+    const speed = 100;
+
+    // Smooth Scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Scroll Animation for cards
+    window.addEventListener('scroll', () => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            if (cardTop < window.innerHeight - 100) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
